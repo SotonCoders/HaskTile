@@ -1,0 +1,28 @@
+// Problem 2
+
+// Read input tile from file:
+List<String> t1 = READ_FILE("tile1.tl");
+
+// Create rotated versions of tile1:
+List<String> rotated90 = ROTATE (t1);
+List<String> rotated180 = ROTATE (rotated90);
+List<String> rotated270 = ROTATE (rotated180);
+
+// Create the base tile:
+List<String> upperHalf = ADD_HORZ (t1, rotated90);
+List<String> lowerHalf = ADD_HORZ (rotated270, rotated180);
+List<String> base = ADD_VERT (upperHalf, lowerHalf);
+
+// Scale the base tile:
+List<String> scaled = SCALE (base, 3);
+
+// Surrond the scaled base with base tiles:
+List<String> horizontal = REPEAT_HORZ (base, 5);
+List<String> vertical = REPEAT_VERT (base, 3);
+List<String> middleHelper = ADD_HORZ (vertical, scaled);
+List<String> middle = ADD_HORZ (middleHelper, vertical);
+
+List<String> result = ADD_VERT (horizontal, middle);
+
+// Print the result tile to Standard Output:
+print (ADD_VERT (result, horizontal));

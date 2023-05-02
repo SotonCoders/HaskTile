@@ -1,0 +1,38 @@
+// Problem 4
+
+// Read input tiles from file:
+List<String> t1 = READ_FILE("tile1.tl");
+List<String> t2 = READ_FILE("tile2.tl");
+List<String> t3 = READ_FILE("tile3.tl");
+
+Int rows = GET_ROW_COUNT(t1);
+
+List<String> negatedTile3 = NEGATION (t3);
+
+// Perrform Boolean operations on tiles:
+List<String> tileIf = CONJUNCTION (t1, negatedTile3);
+List<String> tileElseIf = CONJUNCTION (t2, negatedTile3);
+List<String> tileElse = MAKE_TILE (0, rows);
+
+// Create the top line:
+
+List<String> topLeftLineHelper = REPEAT_HORZ (tileIf, 25);
+List<String> topLeftLine = REPEAT_VERT (topLeftLineHelper, 26);
+List<String> topRightLineHelper = REPEAT_HORZ (tileElseIf, 25);
+List<String> topRightLine = REPEAT_VERT (topRightLineHelper, 26);
+List<String> topLine = ADD_HORZ (topLeftLine, topRightLine);
+
+// Draw the middle blank triangle:
+List<String> middleTriangleHelper = MAKE_TRIANGLE_UP (tileElse, 25);
+List<String> middleTriangle = ADD_HORZ (middleTriangleHelper, middleTriangleHelper);
+
+// Draw the upper left and right triangles:
+List<String> triangleIf = MAKE_TRIANGLE_DOWN (tileIf, 24);
+List<String> triangleElseIf = MAKE_TRIANGLE_DOWN (tileElseIf, 24);
+
+// Connect triangles together:
+List<String> bottomLineHelper = ADD_HORZ (triangleIf, middleTriangle);
+List<String> bottomLine = ADD_HORZ (bottomLineHelper, triangleElseIf);
+
+// Print the result tile to Standard Output:
+print (ADD_VERT (topLine, bottomLine));

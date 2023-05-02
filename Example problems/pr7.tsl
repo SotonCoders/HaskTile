@@ -1,0 +1,480 @@
+// Problem 7
+
+// Read input tile from file:
+List<String> t1 = READ_FILE("tile1.tl");
+
+// Scale given tile 100, 98, 96, ..., 2 times:
+List<String> scaled100 = SCALE(t1, 100);
+List<String> scaled98 = SCALE(t1, 98);
+List<String> scaled96 = SCALE(t1, 96);
+List<String> scaled94 = SCALE(t1, 94);
+List<String> scaled92 = SCALE(t1, 92);
+List<String> scaled90 = SCALE(t1, 90);
+List<String> scaled88 = SCALE(t1, 88);
+List<String> scaled86 = SCALE(t1, 86);
+List<String> scaled84 = SCALE(t1, 84);
+List<String> scaled82 = SCALE(t1, 82);
+List<String> scaled80 = SCALE(t1, 80);
+List<String> scaled78 = SCALE(t1, 78);
+List<String> scaled76 = SCALE(t1, 76);
+List<String> scaled74 = SCALE(t1, 74);
+List<String> scaled72 = SCALE(t1, 72);
+List<String> scaled70 = SCALE(t1, 70);
+List<String> scaled68 = SCALE(t1, 68);
+List<String> scaled66 = SCALE(t1, 66);
+List<String> scaled64 = SCALE(t1, 64);
+List<String> scaled62 = SCALE(t1, 62);
+List<String> scaled60 = SCALE(t1, 60);
+List<String> scaled58 = SCALE(t1, 58);
+List<String> scaled56 = SCALE(t1, 56);
+List<String> scaled54 = SCALE(t1, 54);
+List<String> scaled52 = SCALE(t1, 52);
+List<String> scaled50 = SCALE(t1, 50);
+List<String> scaled48 = SCALE(t1, 48);
+List<String> scaled46 = SCALE(t1, 46);
+List<String> scaled44 = SCALE(t1, 44);
+List<String> scaled42 = SCALE(t1, 42);
+List<String> scaled40 = SCALE(t1, 40);
+List<String> scaled38 = SCALE(t1, 38);
+List<String> scaled36 = SCALE(t1, 36);
+List<String> scaled34 = SCALE(t1, 34);
+List<String> scaled32 = SCALE(t1, 32);
+List<String> scaled30 = SCALE(t1, 30);
+List<String> scaled28 = SCALE(t1, 28);
+List<String> scaled26 = SCALE(t1, 26);
+List<String> scaled24 = SCALE(t1, 24);
+List<String> scaled22 = SCALE(t1, 22);
+List<String> scaled20 = SCALE(t1, 20);
+List<String> scaled18 = SCALE(t1, 18);
+List<String> scaled16 = SCALE(t1, 16);
+List<String> scaled14 = SCALE(t1, 14);
+List<String> scaled12 = SCALE(t1, 12);
+List<String> scaled10 = SCALE(t1, 10);
+List<String> scaled8 = SCALE(t1, 8);
+List<String> scaled6 = SCALE(t1, 6);
+List<String> scaled4 = SCALE(t1, 4);
+List<String> scaled2 = SCALE(t1, 2);
+
+// Create blank tile of same size as input tile:
+Int count = GET_ROW_COUNT(t1);
+List<String> blank = MAKE_TILE(0, count);
+
+// Pad top rows and left columns with blank tiles:
+List<String> row98Helper = REPEAT_HORZ(blank, 98);
+List<String> row98 = REPEAT_VERT(row98Helper, 2);
+List<String> col98Helper = REPEAT_VERT(blank, 100);
+List<String> col98 = REPEAT_HORZ(col98Helper, 2);
+List<String> result98Helper = ADD_VERT(row98, scaled98);
+List<String> result98 = ADD_HORZ(col98, result98Helper);
+
+List<String> row96Helper = REPEAT_HORZ(blank, 96);
+List<String> row96 = REPEAT_VERT(row96Helper, 4);
+List<String> col96Helper = REPEAT_VERT(blank, 100);
+List<String> col96 = REPEAT_HORZ(col96Helper, 4);
+List<String> result96Helper = ADD_VERT(row96, scaled96);
+List<String> result96 = ADD_HORZ(col96, result96Helper);
+
+List<String> row94Helper = REPEAT_HORZ(blank, 94);
+List<String> row94 = REPEAT_VERT(row94Helper, 6);
+List<String> col94Helper = REPEAT_VERT(blank, 100);
+List<String> col94 = REPEAT_HORZ(col94Helper, 6);
+List<String> result94Helper = ADD_VERT(row94, scaled94);
+List<String> result94 = ADD_HORZ(col94, result94Helper);
+
+List<String> row92Helper = REPEAT_HORZ(blank, 92);
+List<String> row92 = REPEAT_VERT(row92Helper, 8);
+List<String> col92Helper = REPEAT_VERT(blank, 100);
+List<String> col92 = REPEAT_HORZ(col92Helper, 8);
+List<String> result92Helper = ADD_VERT(row92, scaled92);
+List<String> result92 = ADD_HORZ(col92, result92Helper);
+
+List<String> row90Helper = REPEAT_HORZ(blank, 90);
+List<String> row90 = REPEAT_VERT(row90Helper, 10);
+List<String> col90Helper = REPEAT_VERT(blank, 100);
+List<String> col90 = REPEAT_HORZ(col90Helper, 10);
+List<String> result90Helper = ADD_VERT(row90, scaled90);
+List<String> result90 = ADD_HORZ(col90, result90Helper);
+
+List<String> row88Helper = REPEAT_HORZ(blank, 88);
+List<String> row88 = REPEAT_VERT(row88Helper, 12);
+List<String> col88Helper = REPEAT_VERT(blank, 100);
+List<String> col88 = REPEAT_HORZ(col88Helper, 12);
+List<String> result88Helper = ADD_VERT(row88, scaled88);
+List<String> result88 = ADD_HORZ(col88, result88Helper);
+
+List<String> row86Helper = REPEAT_HORZ(blank, 86);
+List<String> row86 = REPEAT_VERT(row86Helper, 14);
+List<String> col86Helper = REPEAT_VERT(blank, 100);
+List<String> col86 = REPEAT_HORZ(col86Helper, 14);
+List<String> result86Helper = ADD_VERT(row86, scaled86);
+List<String> result86 = ADD_HORZ(col86, result86Helper);
+
+List<String> row84Helper = REPEAT_HORZ(blank, 84);
+List<String> row84 = REPEAT_VERT(row84Helper, 16);
+List<String> col84Helper = REPEAT_VERT(blank, 100);
+List<String> col84 = REPEAT_HORZ(col84Helper, 16);
+List<String> result84Helper = ADD_VERT(row84, scaled84);
+List<String> result84 = ADD_HORZ(col84, result84Helper);
+
+List<String> row82Helper = REPEAT_HORZ(blank, 82);
+List<String> row82 = REPEAT_VERT(row82Helper, 18);
+List<String> col82Helper = REPEAT_VERT(blank, 100);
+List<String> col82 = REPEAT_HORZ(col82Helper, 18);
+List<String> result82Helper = ADD_VERT(row82, scaled82);
+List<String> result82 = ADD_HORZ(col82, result82Helper);
+
+List<String> row80Helper = REPEAT_HORZ(blank, 80);
+List<String> row80 = REPEAT_VERT(row80Helper, 20);
+List<String> col80Helper = REPEAT_VERT(blank, 100);
+List<String> col80 = REPEAT_HORZ(col80Helper, 20);
+List<String> result80Helper = ADD_VERT(row80, scaled80);
+List<String> result80 = ADD_HORZ(col80, result80Helper);
+
+List<String> row78Helper = REPEAT_HORZ(blank, 78);
+List<String> row78 = REPEAT_VERT(row78Helper, 22);
+List<String> col78Helper = REPEAT_VERT(blank, 100);
+List<String> col78 = REPEAT_HORZ(col78Helper, 22);
+List<String> result78Helper = ADD_VERT(row78, scaled78);
+List<String> result78 = ADD_HORZ(col78, result78Helper);
+
+List<String> row76Helper = REPEAT_HORZ(blank, 76);
+List<String> row76 = REPEAT_VERT(row76Helper, 24);
+List<String> col76Helper = REPEAT_VERT(blank, 100);
+List<String> col76 = REPEAT_HORZ(col76Helper, 24);
+List<String> result76Helper = ADD_VERT(row76, scaled76);
+List<String> result76 = ADD_HORZ(col76, result76Helper);
+
+List<String> row74Helper = REPEAT_HORZ(blank, 74);
+List<String> row74 = REPEAT_VERT(row74Helper, 26);
+List<String> col74Helper = REPEAT_VERT(blank, 100);
+List<String> col74 = REPEAT_HORZ(col74Helper, 26);
+List<String> result74Helper = ADD_VERT(row74, scaled74);
+List<String> result74 = ADD_HORZ(col74, result74Helper);
+
+List<String> row72Helper = REPEAT_HORZ(blank, 72);
+List<String> row72 = REPEAT_VERT(row72Helper, 28);
+List<String> col72Helper = REPEAT_VERT(blank, 100);
+List<String> col72 = REPEAT_HORZ(col72Helper, 28);
+List<String> result72Helper = ADD_VERT(row72, scaled72);
+List<String> result72 = ADD_HORZ(col72, result72Helper);
+
+List<String> row70Helper = REPEAT_HORZ(blank, 70);
+List<String> row70 = REPEAT_VERT(row70Helper, 30);
+List<String> col70Helper = REPEAT_VERT(blank, 100);
+List<String> col70 = REPEAT_HORZ(col70Helper, 30);
+List<String> result70Helper = ADD_VERT(row70, scaled70);
+List<String> result70 = ADD_HORZ(col70, result70Helper);
+
+List<String> row68Helper = REPEAT_HORZ(blank, 68);
+List<String> row68 = REPEAT_VERT(row68Helper, 32);
+List<String> col68Helper = REPEAT_VERT(blank, 100);
+List<String> col68 = REPEAT_HORZ(col68Helper, 32);
+List<String> result68Helper = ADD_VERT(row68, scaled68);
+List<String> result68 = ADD_HORZ(col68, result68Helper);
+
+List<String> row66Helper = REPEAT_HORZ(blank, 66);
+List<String> row66 = REPEAT_VERT(row66Helper, 34);
+List<String> col66Helper = REPEAT_VERT(blank, 100);
+List<String> col66 = REPEAT_HORZ(col66Helper, 34);
+List<String> result66Helper = ADD_VERT(row66, scaled66);
+List<String> result66 = ADD_HORZ(col66, result66Helper);
+
+List<String> row64Helper = REPEAT_HORZ(blank, 64);
+List<String> row64 = REPEAT_VERT(row64Helper, 36);
+List<String> col64Helper = REPEAT_VERT(blank, 100);
+List<String> col64 = REPEAT_HORZ(col64Helper, 36);
+List<String> result64Helper = ADD_VERT(row64, scaled64);
+List<String> result64 = ADD_HORZ(col64, result64Helper);
+
+List<String> row62Helper = REPEAT_HORZ(blank, 62);
+List<String> row62 = REPEAT_VERT(row62Helper, 38);
+List<String> col62Helper = REPEAT_VERT(blank, 100);
+List<String> col62 = REPEAT_HORZ(col62Helper, 38);
+List<String> result62Helper = ADD_VERT(row62, scaled62);
+List<String> result62 = ADD_HORZ(col62, result62Helper);
+
+List<String> row60Helper = REPEAT_HORZ(blank, 60);
+List<String> row60 = REPEAT_VERT(row60Helper, 40);
+List<String> col60Helper = REPEAT_VERT(blank, 100);
+List<String> col60 = REPEAT_HORZ(col60Helper, 40);
+List<String> result60Helper = ADD_VERT(row60, scaled60);
+List<String> result60 = ADD_HORZ(col60, result60Helper);
+
+List<String> row58Helper = REPEAT_HORZ(blank, 58);
+List<String> row58 = REPEAT_VERT(row58Helper, 42);
+List<String> col58Helper = REPEAT_VERT(blank, 100);
+List<String> col58 = REPEAT_HORZ(col58Helper, 42);
+List<String> result58Helper = ADD_VERT(row58, scaled58);
+List<String> result58 = ADD_HORZ(col58, result58Helper);
+
+List<String> row56Helper = REPEAT_HORZ(blank, 56);
+List<String> row56 = REPEAT_VERT(row56Helper, 44);
+List<String> col56Helper = REPEAT_VERT(blank, 100);
+List<String> col56 = REPEAT_HORZ(col56Helper, 44);
+List<String> result56Helper = ADD_VERT(row56, scaled56);
+List<String> result56 = ADD_HORZ(col56, result56Helper);
+
+List<String> row54Helper = REPEAT_HORZ(blank, 54);
+List<String> row54 = REPEAT_VERT(row54Helper, 46);
+List<String> col54Helper = REPEAT_VERT(blank, 100);
+List<String> col54 = REPEAT_HORZ(col54Helper, 46);
+List<String> result54Helper = ADD_VERT(row54, scaled54);
+List<String> result54 = ADD_HORZ(col54, result54Helper);
+
+List<String> row52Helper = REPEAT_HORZ(blank, 52);
+List<String> row52 = REPEAT_VERT(row52Helper, 48);
+List<String> col52Helper = REPEAT_VERT(blank, 100);
+List<String> col52 = REPEAT_HORZ(col52Helper, 48);
+List<String> result52Helper = ADD_VERT(row52, scaled52);
+List<String> result52 = ADD_HORZ(col52, result52Helper);
+
+List<String> row50Helper = REPEAT_HORZ(blank, 50);
+List<String> row50 = REPEAT_VERT(row50Helper, 50);
+List<String> col50Helper = REPEAT_VERT(blank, 100);
+List<String> col50 = REPEAT_HORZ(col50Helper, 50);
+List<String> result50Helper = ADD_VERT(row50, scaled50);
+List<String> result50 = ADD_HORZ(col50, result50Helper);
+
+List<String> row48Helper = REPEAT_HORZ(blank, 48);
+List<String> row48 = REPEAT_VERT(row48Helper, 52);
+List<String> col48Helper = REPEAT_VERT(blank, 100);
+List<String> col48 = REPEAT_HORZ(col48Helper, 52);
+List<String> result48Helper = ADD_VERT(row48, scaled48);
+List<String> result48 = ADD_HORZ(col48, result48Helper);
+
+List<String> row46Helper = REPEAT_HORZ(blank, 46);
+List<String> row46 = REPEAT_VERT(row46Helper, 54);
+List<String> col46Helper = REPEAT_VERT(blank, 100);
+List<String> col46 = REPEAT_HORZ(col46Helper, 54);
+List<String> result46Helper = ADD_VERT(row46, scaled46);
+List<String> result46 = ADD_HORZ(col46, result46Helper);
+
+List<String> row44Helper = REPEAT_HORZ(blank, 44);
+List<String> row44 = REPEAT_VERT(row44Helper, 56);
+List<String> col44Helper = REPEAT_VERT(blank, 100);
+List<String> col44 = REPEAT_HORZ(col44Helper, 56);
+List<String> result44Helper = ADD_VERT(row44, scaled44);
+List<String> result44 = ADD_HORZ(col44, result44Helper);
+
+List<String> row42Helper = REPEAT_HORZ(blank, 42);
+List<String> row42 = REPEAT_VERT(row42Helper, 58);
+List<String> col42Helper = REPEAT_VERT(blank, 100);
+List<String> col42 = REPEAT_HORZ(col42Helper, 58);
+List<String> result42Helper = ADD_VERT(row42, scaled42);
+List<String> result42 = ADD_HORZ(col42, result42Helper);
+
+List<String> row40Helper = REPEAT_HORZ(blank, 40);
+List<String> row40 = REPEAT_VERT(row40Helper, 60);
+List<String> col40Helper = REPEAT_VERT(blank, 100);
+List<String> col40 = REPEAT_HORZ(col40Helper, 60);
+List<String> result40Helper = ADD_VERT(row40, scaled40);
+List<String> result40 = ADD_HORZ(col40, result40Helper);
+
+List<String> row38Helper = REPEAT_HORZ(blank, 38);
+List<String> row38 = REPEAT_VERT(row38Helper, 62);
+List<String> col38Helper = REPEAT_VERT(blank, 100);
+List<String> col38 = REPEAT_HORZ(col38Helper, 62);
+List<String> result38Helper = ADD_VERT(row38, scaled38);
+List<String> result38 = ADD_HORZ(col38, result38Helper);
+
+List<String> row36Helper = REPEAT_HORZ(blank, 36);
+List<String> row36 = REPEAT_VERT(row36Helper, 64);
+List<String> col36Helper = REPEAT_VERT(blank, 100);
+List<String> col36 = REPEAT_HORZ(col36Helper, 64);
+List<String> result36Helper = ADD_VERT(row36, scaled36);
+List<String> result36 = ADD_HORZ(col36, result36Helper);
+
+List<String> row34Helper = REPEAT_HORZ(blank, 34);
+List<String> row34 = REPEAT_VERT(row34Helper, 66);
+List<String> col34Helper = REPEAT_VERT(blank, 100);
+List<String> col34 = REPEAT_HORZ(col34Helper, 66);
+List<String> result34Helper = ADD_VERT(row34, scaled34);
+List<String> result34 = ADD_HORZ(col34, result34Helper);
+
+List<String> row32Helper = REPEAT_HORZ(blank, 32);
+List<String> row32 = REPEAT_VERT(row32Helper, 68);
+List<String> col32Helper = REPEAT_VERT(blank, 100);
+List<String> col32 = REPEAT_HORZ(col32Helper, 68);
+List<String> result32Helper = ADD_VERT(row32, scaled32);
+List<String> result32 = ADD_HORZ(col32, result32Helper);
+
+List<String> row30Helper = REPEAT_HORZ(blank, 30);
+List<String> row30 = REPEAT_VERT(row30Helper, 70);
+List<String> col30Helper = REPEAT_VERT(blank, 100);
+List<String> col30 = REPEAT_HORZ(col30Helper, 70);
+List<String> result30Helper = ADD_VERT(row30, scaled30);
+List<String> result30 = ADD_HORZ(col30, result30Helper);
+
+List<String> row28Helper = REPEAT_HORZ(blank, 28);
+List<String> row28 = REPEAT_VERT(row28Helper, 72);
+List<String> col28Helper = REPEAT_VERT(blank, 100);
+List<String> col28 = REPEAT_HORZ(col28Helper, 72);
+List<String> result28Helper = ADD_VERT(row28, scaled28);
+List<String> result28 = ADD_HORZ(col28, result28Helper);
+
+List<String> row26Helper = REPEAT_HORZ(blank, 26);
+List<String> row26 = REPEAT_VERT(row26Helper, 74);
+List<String> col26Helper = REPEAT_VERT(blank, 100);
+List<String> col26 = REPEAT_HORZ(col26Helper, 74);
+List<String> result26Helper = ADD_VERT(row26, scaled26);
+List<String> result26 = ADD_HORZ(col26, result26Helper);
+
+List<String> row24Helper = REPEAT_HORZ(blank, 24);
+List<String> row24 = REPEAT_VERT(row24Helper, 76);
+List<String> col24Helper = REPEAT_VERT(blank, 100);
+List<String> col24 = REPEAT_HORZ(col24Helper, 76);
+List<String> result24Helper = ADD_VERT(row24, scaled24);
+List<String> result24 = ADD_HORZ(col24, result24Helper);
+
+List<String> row22Helper = REPEAT_HORZ(blank, 22);
+List<String> row22 = REPEAT_VERT(row22Helper, 78);
+List<String> col22Helper = REPEAT_VERT(blank, 100);
+List<String> col22 = REPEAT_HORZ(col22Helper, 78);
+List<String> result22Helper = ADD_VERT(row22, scaled22);
+List<String> result22 = ADD_HORZ(col22, result22Helper);
+
+List<String> row20Helper = REPEAT_HORZ(blank, 20);
+List<String> row20 = REPEAT_VERT(row20Helper, 80);
+List<String> col20Helper = REPEAT_VERT(blank, 100);
+List<String> col20 = REPEAT_HORZ(col20Helper, 80);
+List<String> result20Helper = ADD_VERT(row20, scaled20);
+List<String> result20 = ADD_HORZ(col20, result20Helper);
+
+List<String> row18Helper = REPEAT_HORZ(blank, 18);
+List<String> row18 = REPEAT_VERT(row18Helper, 82);
+List<String> col18Helper = REPEAT_VERT(blank, 100);
+List<String> col18 = REPEAT_HORZ(col18Helper, 82);
+List<String> result18Helper = ADD_VERT(row18, scaled18);
+List<String> result18 = ADD_HORZ(col18, result18Helper);
+
+List<String> row16Helper = REPEAT_HORZ(blank, 16);
+List<String> row16 = REPEAT_VERT(row16Helper, 84);
+List<String> col16Helper = REPEAT_VERT(blank, 100);
+List<String> col16 = REPEAT_HORZ(col16Helper, 84);
+List<String> result16Helper = ADD_VERT(row16, scaled16);
+List<String> result16 = ADD_HORZ(col16, result16Helper);
+
+List<String> row14Helper = REPEAT_HORZ(blank, 14);
+List<String> row14 = REPEAT_VERT(row14Helper, 86);
+List<String> col14Helper = REPEAT_VERT(blank, 100);
+List<String> col14 = REPEAT_HORZ(col14Helper, 86);
+List<String> result14Helper = ADD_VERT(row14, scaled14);
+List<String> result14 = ADD_HORZ(col14, result14Helper);
+
+List<String> row12Helper = REPEAT_HORZ(blank, 12);
+List<String> row12 = REPEAT_VERT(row12Helper, 88);
+List<String> col12Helper = REPEAT_VERT(blank, 100);
+List<String> col12 = REPEAT_HORZ(col12Helper, 88);
+List<String> result12Helper = ADD_VERT(row12, scaled12);
+List<String> result12 = ADD_HORZ(col12, result12Helper);
+
+List<String> row10Helper = REPEAT_HORZ(blank, 10);
+List<String> row10 = REPEAT_VERT(row10Helper, 90);
+List<String> col10Helper = REPEAT_VERT(blank, 100);
+List<String> col10 = REPEAT_HORZ(col10Helper, 90);
+List<String> result10Helper = ADD_VERT(row10, scaled10);
+List<String> result10 = ADD_HORZ(col10, result10Helper);
+
+List<String> row8Helper = REPEAT_HORZ(blank, 8);
+List<String> row8 = REPEAT_VERT(row8Helper, 92);
+List<String> col8Helper = REPEAT_VERT(blank, 100);
+List<String> col8 = REPEAT_HORZ(col8Helper, 92);
+List<String> result8Helper = ADD_VERT(row8, scaled8);
+List<String> result8 = ADD_HORZ(col8, result8Helper);
+
+List<String> row6Helper = REPEAT_HORZ(blank, 6);
+List<String> row6 = REPEAT_VERT(row6Helper, 94);
+List<String> col6Helper = REPEAT_VERT(blank, 100);
+List<String> col6 = REPEAT_HORZ(col6Helper, 94);
+List<String> result6Helper = ADD_VERT(row6, scaled6);
+List<String> result6 = ADD_HORZ(col6, result6Helper);
+
+List<String> row4Helper = REPEAT_HORZ(blank, 4);
+List<String> row4 = REPEAT_VERT(row4Helper, 96);
+List<String> col4Helper = REPEAT_VERT(blank, 100);
+List<String> col4 = REPEAT_HORZ(col4Helper, 96);
+List<String> result4Helper = ADD_VERT(row4, scaled4);
+List<String> result4 = ADD_HORZ(col4, result4Helper);
+
+List<String> row2Helper = REPEAT_HORZ(blank, 2);
+List<String> row2 = REPEAT_VERT(row2Helper, 98);
+List<String> col2Helper = REPEAT_VERT(blank, 100);
+List<String> col2 = REPEAT_HORZ(col2Helper, 98);
+List<String> result2Helper = ADD_VERT(row2, scaled2);
+List<String> result2 = ADD_HORZ(col2, result2Helper);
+
+
+// XOR all values together: 
+
+List<String> xor1 = XOR(result98, result96);
+List<String> xor2 = XOR(xor1, result94);
+List<String> xor3 = XOR(xor2, result92);
+List<String> xor4 = XOR(xor3, result90);
+
+List<String> xor5 = XOR(xor4, result88);
+List<String> xor6 = XOR(xor5, result86);
+List<String> xor7 = XOR(xor6, result84);
+List<String> xor8 = XOR(xor7, result82);
+List<String> xor9 = XOR(xor8, result80);
+
+List<String> xor10 = XOR(xor9, result78);
+List<String> xor11 = XOR(xor10, result76);
+List<String> xor12 = XOR(xor11, result74);
+List<String> xor13 = XOR(xor12, result72);
+List<String> xor14 = XOR(xor13, result70);
+
+List<String> xor15 = XOR(xor14, result68);
+List<String> xor16 = XOR(xor15, result66);
+List<String> xor17 = XOR(xor16, result64);
+List<String> xor18 = XOR(xor17, result62);
+List<String> xor19 = XOR(xor18, result60);
+
+List<String> xor20 = XOR(xor19, result58);
+List<String> xor21 = XOR(xor20, result56);
+List<String> xor22 = XOR(xor21, result54);
+List<String> xor23 = XOR(xor22, result52);
+List<String> xor24 = XOR(xor23, result50);
+
+List<String> xor25 = XOR(xor24, result48);
+List<String> xor26 = XOR(xor25, result46);
+List<String> xor27 = XOR(xor26, result44);
+List<String> xor28 = XOR(xor27, result42);
+List<String> xor29 = XOR(xor28, result40);
+
+List<String> xor30 = XOR(xor29, result38);
+List<String> xor31 = XOR(xor30, result36);
+List<String> xor32 = XOR(xor31, result34);
+List<String> xor33 = XOR(xor32, result32);
+List<String> xor34 = XOR(xor33, result30);
+
+List<String> xor35 = XOR(xor34, result28);
+List<String> xor36 = XOR(xor35, result26);
+List<String> xor37 = XOR(xor36, result24);
+List<String> xor38 = XOR(xor37, result22);
+List<String> xor39 = XOR(xor38, result20);
+
+List<String> xor40 = XOR(xor39, result18);
+List<String> xor41 = XOR(xor40, result16);
+List<String> xor42 = XOR(xor41, result14);
+List<String> xor43 = XOR(xor42, result12);
+List<String> xor44 = XOR(xor43, result10);
+
+List<String> xor45 = XOR(xor44, result8);
+List<String> xor46 = XOR(xor45, result6);
+List<String> xor47 = XOR(xor46, result4);
+
+List<String> xor = XOR(scaled100, xor47);
+
+// Reflect tileQ:
+List<String> tileQ = XOR(xor, result2);
+List<String> tileQX = REFLECT_HORZ(tileQ);
+List<String> tileQY = REFLECT_VERT(tileQ);
+List<String> tileQXY = REFLECT_VERT(tileQX);
+
+// Connect reflected versions of tileQ:
+List<String> line1 = ADD_HORZ(tileQ, tileQY);
+List<String> line2 = ADD_HORZ(tileQX, tileQXY);
+List<String> result = ADD_VERT(line1, line2);
+
+// Print result to Standard Output:
+print (result);

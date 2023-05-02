@@ -1,0 +1,30 @@
+// Problem 3
+
+// Read input tile from file:
+List<String> t1 = READ_FILE("tile1.tl");
+
+// Create a blank tile of same size as tile1:
+Int count = GET_ROW_COUNT(t1);
+List<String> blankTile = MAKE_TILE (0, count);
+
+// Create reflected versions of tile1:
+List<String> tileY = REFLECT_VERT (t1);
+List<String> tileX = REFLECT_HORZ (t1);
+List<String> tileXY = REFLECT_VERT (tileX);
+
+// Create the base tile:
+List<String> bottomLineHelper = ADD_HORZ (blankTile, tileX);
+List<String> bottomLine = ADD_HORZ (bottomLineHelper, tileXY);
+List<String> baseHelper = ADD_HORZ (t1, tileY);
+List<String> baseHelper2 = ADD_HORZ (baseHelper, blankTile);
+List<String> base = ADD_VERT (baseHelper2, bottomLine);
+
+// Reflect the base tile:
+List<String> reflectedBase = REFLECT_VERT (base);
+
+// Repeat base and reflected base in the required pattern:
+List<String> lineHelper = ADD_HORZ (base, reflectedBase);
+List<String> line = REPEAT_HORZ (lineHelper, 10);
+
+// Print the result tile to Standard Output:
+print (REPEAT_VERT (line, 30));

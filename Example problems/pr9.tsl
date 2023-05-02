@@ -1,0 +1,56 @@
+// Problem 9
+
+// Read input tile from file:
+List<String> t1 = READ_FILE("tile1.tl");
+
+// Create tiles filled with 1s or 0s of same size as input tile:
+Int count = GET_ROW_COUNT(t1);
+List<String> blank = MAKE_TILE(0, count);
+List<String> ones = MAKE_TILE(1, count);
+
+// Double tiles vertically for further triangle creation:
+List<String> filled = ADD_VERT(t1, t1);
+List<String> ones2 = ADD_VERT(ones, ones);
+List<String> empty = ADD_VERT(blank, blank);
+
+List<String> triangleDown = MAKE_TRIANGLE_DOWN(empty, 49);
+
+// Right half of base tile:
+List<String> triangle1Up = MAKE_TRIANGLE_UP(empty, 51);
+List<String> triangle1 = ADD_HORZ(triangle1Up, triangleDown);
+
+// Left half of base tile:
+List<String> triangle2Up = MAKE_TRIANGLE_UP(ones2, 51);
+List<String> triangle2 = ADD_HORZ(triangle2Up, triangleDown);
+
+// Blank row and column for top and right:
+List<String> blankLCol = REPEAT_VERT(blank, 100);
+List<String> blankLine = REPEAT_HORZ(blank, 101);
+
+// Base tile filled with tiles made of 1s:
+List<String> triangleOnesHelper = ADD_HORZ(triangle2, triangle1);
+List<String> triangleOnesHelper2 = ADD_HORZ(triangleOnesHelper, blankLCol);
+List<String> triangleOnes = ADD_VERT(blankLine, triangleOnesHelper2);
+
+// Rotated and reflected versions of base tile:
+List<String> triangleOnesRotated1 = ROTATE(triangleOnes);
+List<String> triangleOnesRotated1Reflected = REFLECT_HORZ(triangleOnesRotated1);
+List<String> triangleOnesRotated1Reflected2 = REFLECT_VERT(triangleOnesRotated1Reflected);
+List<String> triangleOnesReflected = REFLECT_VERT(triangleOnes);
+List<String> triangleOnesReflectedNegated = NEGATION(triangleOnesReflected);
+
+// Boolean logic added for connecting rotated/reflected versions together:
+List<String> or = DISJUNCTION(triangleOnesReflected, triangleOnes);
+List<String> xor = XOR(or, triangleOnesRotated1Reflected2);
+List<String> triangleOnesRotated1Reflected3 = REFLECT_HORZ(triangleOnesRotated1Reflected2);
+List<String> xor2 = XOR(xor, triangleOnesRotated1Reflected3);
+
+// Input tile used to make a tile of the same size as output:
+List<String> t1Line = REPEAT_HORZ(t1, 101);
+List<String> t1Grid = REPEAT_VERT(t1Line, 101);
+
+// Final result:
+List<String> result = CONJUNCTION(t1Grid, xor2);
+
+// Print result to Standard Output:
+print(result);

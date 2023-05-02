@@ -1,0 +1,63 @@
+// Problem 8
+
+// Read input tiles from file:
+List<String> t1 = READ_FILE("tile1.tl");
+List<String> t2 = READ_FILE("tile2.tl");
+
+// Flipped versions of tile1 and tile2 (arrow down):
+List<String> t1Flipped = REFLECT_HORZ(t1);
+List<String> t2Flipped = REFLECT_HORZ(t2);
+
+// Double size version of normal and flipped tile2:
+List<String> t2Double = SCALE(t2, 2);
+List<String> t2DoubleFlipped = REFLECT_HORZ(t2Double);
+
+// Top left corner pattern:
+
+List<String> cornerLineHorzHelper = ADD_HORZ(t1Flipped, t1Flipped);
+List<String> cornerLineHorz = ADD_HORZ(cornerLineHorzHelper, t2Flipped);
+List<String> cornerLineVert = ADD_VERT(t1Flipped, t2);
+
+List<String> cornerLineDown = ADD_HORZ(cornerLineVert, t2Double);
+List<String> cornerLineDownFlipped = REFLECT_HORZ(cornerLineDown);
+
+List<String> cornerBaseHelper = ADD_VERT(cornerLineHorz, cornerLineDown);
+List<String> cornerBase = ADD_VERT(cornerBaseHelper, cornerLineDownFlipped);
+
+// Middle left corner pattern:
+
+List<String> middleLineTopHelper1 = ADD_HORZ(t2DoubleFlipped, t2DoubleFlipped);
+List<String> middleLineTopHelper2 = ADD_VERT(t2Flipped, t1);
+List<String> middleLineTop = ADD_HORZ(middleLineTopHelper1, middleLineTopHelper2);
+
+List<String> middleLineDownHelper1 = REFLECT_HORZ(cornerBaseHelper);
+List<String> middleLineDownHelper2 = REFLECT_HORZ(cornerLineHorzHelper);
+List<String> middleLineDownHelper3 = ADD_VERT(middleLineDownHelper2, t2Double);
+List<String> middleLineDown = ADD_HORZ(middleLineDownHelper1, middleLineDownHelper3);
+
+List<String> middleBase = ADD_VERT(middleLineTop, middleLineDown);
+
+// Reflected versions of base:
+List<String> baseHelper = ADD_HORZ(cornerBase, middleBase);
+List<String> baseHelperY = REFLECT_VERT(baseHelper);
+List<String> baseHelperX = REFLECT_HORZ(baseHelper);
+List<String> baseHelperXY = REFLECT_HORZ(baseHelperY);
+
+// Main base:
+List<String> baseTop = ADD_HORZ(baseHelper, baseHelperY);
+List<String> baseBottom = ADD_HORZ(baseHelperX, baseHelperXY);
+List<String> base = ADD_VERT(baseTop, baseBottom);
+
+// Half base (for most right columns):
+List<String> baseHalf = ADD_VERT(baseHelper, baseHelperX);
+
+// Line constructed of base elements:
+List<String> lineHelper = REPEAT_HORZ(base, 2);
+List<String> line = ADD_HORZ(lineHelper, baseHalf);
+
+// Main line repeated 4 times (final result):
+List<String> result = REPEAT_VERT(line, 4);
+
+// Print result to Standard Output:
+print(result);
+

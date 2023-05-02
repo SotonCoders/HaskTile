@@ -1,0 +1,32 @@
+// Problem 5
+
+// Read input tile from file:
+List<String> t1 = READ_FILE("tile1.tl");
+
+// Split tile1 into subtiles:
+
+List<List<String>> subtiles = SUBTILES (t1, 6, 3);
+
+List<String> subtile1 = GET_BY_INDEX (subtiles, 0);
+List<String> subtile2 = GET_BY_INDEX (subtiles, 1);
+List<String> subtile3 = GET_BY_INDEX (subtiles, 2);
+
+// Top row:
+List<String> subtile1CopiedHelper = ADD_HORZ (subtile1, subtile1);
+List<String> subtile1Copied = ADD_HORZ (subtile1CopiedHelper, subtile1);
+
+// Middle row:
+List<String> subtile2CopiedHelper = ADD_HORZ (subtile2, subtile2);
+List<String> subtile2Copied = ADD_HORZ (subtile2CopiedHelper, subtile2);
+
+// Bottom row:
+List<String> subtile3CopiedHelper = ADD_HORZ (subtile3, subtile3);
+List<String> subtile3Copied = ADD_HORZ (subtile3CopiedHelper, subtile3);
+
+//  Connect rows:
+List<String> result = ADD_VERT (subtile1Copied, subtile2Copied);
+
+// Print the result tile to Standard Output:
+print(ADD_VERT (result, subtile3Copied));
+
+

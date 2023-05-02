@@ -1,0 +1,19 @@
+// Problem 1
+
+// Read input tiles from file:
+List<String> t1 = READ_FILE("tile1.tl");
+List<String> t2 = READ_FILE("tile2.tl");
+
+// Add tiles horizontally:
+List<String> v1 = ADD_HORZ (t1, t2);
+List<String> v2 = ADD_HORZ (t2, t1);
+
+// Create 2 lines with patterns of tiles:
+List<String> line1 = REPEAT_HORZ (v1, 32);
+List<String> line2 = REPEAT_HORZ (v2, 32);
+
+// Add the 2 lines together:
+List<String> v = ADD_VERT (line1, line2);
+
+// Print the result tile to Standard Output:
+print (REPEAT_VERT (v, 32));

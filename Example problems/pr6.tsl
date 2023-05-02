@@ -1,0 +1,57 @@
+// Problem 6
+
+// Read input tiles from file:
+List<String> t1 = READ_FILE("tile1.tl");
+List<String> t2 = READ_FILE("tile2.tl");
+List<String> t3 = READ_FILE("tile3.tl");
+
+// Create blank tiles of same size as input tile:
+Int tileSize = GET_ROW_COUNT (t1);
+List<String> blank = MAKE_TILE (0, tileSize);
+
+List<String> blankx2 = ADD_HORZ (blank, blank);
+
+// Create 1st line:
+List<String> t1t2 = ADD_HORZ (t1, t2);
+List<String> t1t2t3 = ADD_HORZ (t1t2, t3);
+List<String> t1t2t3line = REPEAT_HORZ (t1t2t3, 19);
+List<String> line1Helper = ADD_HORZ (blankx2, t1t2t3line);
+List<String> line1 = ADD_HORZ (line1Helper, t1);
+
+// Create 2nd line:
+List<String> t2t3 = ADD_HORZ (t2, t3);
+List<String> t1t2t3 = ADD_HORZ (t1t2, t3);
+List<String> blankt2t3 = ADD_HORZ (blank, t2t3);
+List<String> line2 = ADD_HORZ (blankt2t3, t1t2t3line);
+
+ // Create 3rd line:
+List<String> line3Helper = ADD_HORZ (t3, t1t2t3line);
+List<String> line3 = ADD_HORZ (line3Helper, t1t2);
+
+// Create 4th line:
+List<String> line4Helper = ADD_HORZ (t2t3, t1t2t3line);
+List<String> line4 = ADD_HORZ (line4Helper, t1);
+
+// Create 5th line:
+List<String> line5 = REPEAT_HORZ (t1t2t3, 20);
+
+// Repeat lines in given alternating pattern:
+List<String> vertl3l4 = ADD_VERT (line3, line4);
+List<String> vertl3l4l5 = ADD_VERT (vertl3l4, line5);
+List<String> vertRepl3l4l5 = REPEAT_VERT (vertl3l4l5, 18);
+List<String> vertl1l2 = ADD_VERT (line1, line2);
+List<String> topVert = ADD_VERT (vertl1l2, vertRepl3l4l5);
+List<String> finalVertHelper = ADD_VERT (topVert, vertl3l4);
+
+// Create bottom 2 lines:
+List<String> rline1H = ADD_HORZ (t1t2t3line, t1t2);
+List<String> rline1 = ADD_HORZ (rline1H, blank);
+List<String> rline2H = ADD_HORZ (t3, t1t2t3line);
+List<String> rline2 = ADD_HORZ (rline2H, blankx2);
+List<String> botVert = ADD_VERT (rline1, rline2);
+
+// Connect final parts together:
+List<String> finalVert = ADD_VERT (finalVertHelper, botVert);
+
+// Print result to Standard Output:
+print (finalVert);

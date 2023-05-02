@@ -1,0 +1,21 @@
+// Problem 10
+
+// Read input tiles from file:
+List<String> t1 = READ_FILE("tile1.tl");
+List<String> t2 = READ_FILE("tile2.tl");
+
+Int t1Length = GET_ROW_COUNT(t1);
+Int t2Length = GET_ROW_COUNT(t2);
+
+List<String> subList1 = SUBLIST(t1, 1, 12);
+Int end = t2Length + 12;
+List<String> subList2 = SUBLIST(t1, 13, end);
+Int start = t2Length + 13;
+List<String> subList3 = SUBLIST(t1, start, t1Length);
+
+List<String> roowMiddle = REPLACE_IN_ROW(subList2, t2, 12);
+
+List<String> resultHelper = ADD_VERT(subList1, roowMiddle);
+List<String> result = ADD_VERT(resultHelper, subList3);
+
+print (result);
