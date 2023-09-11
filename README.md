@@ -4,6 +4,10 @@ A new domain-specific programming language made using Haskell, meant to solve ti
 
 <p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
 
+<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
+
+<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
+
 ### Cheat Sheet
 
 <p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%203.05.34%20pm.png?raw=true"/></p> 
