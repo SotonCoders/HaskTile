@@ -4,22 +4,15 @@ A new domain-specific programming language made using Haskell, meant to solve ti
 
 <p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
 
-## Syntax
-
-The syntax is inspired from Java and Haskell : 
-- new variable type for tiles
-- the main classic Java variables types are also available
-- multiple predefined functions for tile editing
-- comments
-- allow adding functions as parameters to other functions. For instance, we have a function "PRINT", which can take either a variable (e.g.: "PRINT(var1)), or a function (e.g.: "PRINT(ADD_VERT(tile1, tile2))".
-
 ### Cheat Sheet
 
-<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
+<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%203.05.34%20pm.png?raw=true"/></p> 
 
-<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
+<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%203.05.25%20pm.png?raw=true"/></p> 
 
 ## Language features
+
+### Syntax
 
 Lexing and Parsing are implemented using Alex and Happy, and are stored inside "HasktileTokens.x"
 and "HasktileGrammar.y" files.
@@ -41,7 +34,7 @@ reagarding tile creation. The main reason why we stick with a loop function is t
 added if statements so we can check the input tiles, or do some unregular changes in tiles.
 
 We tried to keep the AST as simple as possible passing only variables name of funtions and parameters:
-<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%2012.46.56%20pm.png?raw=true"/></p> 
+<p align="center"><img width="350" src="https://github.com/LucianSerbanescu/HaskTile/blob/main/Documentation/Screenshot%202023-09-11%20at%203.03.13%20pm.png?raw=true"/></p> 
 
 
 We would say that we have only one scope (or none at all). We do not provide declarations of new
@@ -60,7 +53,7 @@ Hasktile is a strongly typed language. Once a variable is defined with a specifi
 When a function is called the interpreter checks the types of variables that are being called. If the type of the variables is not consistent with what is being asked in the function, an error is thrown before the function is executed.
 
 
-### Illegal comments
+### Illegal inputs
 
 Whenever a tile is read from file, the tile is validated by the interpreter.
 If the inserted tile is valid (consists of only 0s and 1s, and the number of rows is equal to the number of columns), then the program continues executing.
